@@ -1,0 +1,18 @@
+import pygame, sys #import the libraries we need for this, Pygame the Main thing we will be working on
+from pygame.locals import * #thiss just get everything from pygame
+
+# Window setup
+WIN = (600, 400) #The Window's size
+screen = pygame.display.set_mode(WIN, 0, 32) # Display the screen, pass in the WIN parameter for the size, tand the 0 for so pygame doesn't make any special changes to our window, and the 32 is gonna set the window as 32 bit mode.
+pygame.display.set_caption("Guthub") # Set the name of the window (optional)
+clock = pygame.time.Clock() # This is the thing of how we set the fps of the game
+
+# Main game loop
+while True: # While True do this
+  for event in pygame.event.get(): # Get all the event thats happening 
+    if event.type == pygame.QUIT:  # if the user press the X button in the window then...
+      pygame.quit() # Quit pygame!
+      sys.exit()    # some proccesses still might be running in the background so to ensure everything closes we do sys.exit()
+
+  pygame.display.update() # Update the screen every...
+  clock.tick(60)          # 60 times a second!
